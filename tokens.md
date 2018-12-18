@@ -121,6 +121,9 @@ La diferencia entre los BEARER TOKENS y los JWT ( Json Web Tokens) es que los JW
 En OAUTH2 no especifica el formato de access_token así que se puede usar JWT.
 
 
+Evitar usar sistema de tokens para todas las ocasiones, si hay un gran volumen de información puede ser muy complicado y tedioso el mantenimiento y la implementación en el sistema.
+
+
 
 
 
