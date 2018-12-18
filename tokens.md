@@ -110,6 +110,17 @@ Si contiene información confidencial el token, es mejor encriptar el token. TLS
 
     //En el código se hace encrypt-then-MAC, ya que si se realiza al revés, MAC-then-encrypt es vulnerable a los atauqes Vaudenay-Style.
 
+OAUTH Y TOKENS
+
+OAUTH es un protocolo de autorización que devuelve un access_token y puede hacer llamadas a APIs en su nombre.
+
+Estos Tokens se les llama BEARERS TOKENS (Tokens de portador) y se componen de Strings randoms que se almacen en una Tabla Hash en el servidor junto a su caducidad, Scope y usuario asignado. Al llamar a la API se comprueba el token en el servidor ( que no haya caducado, etc.).
+
+La diferencia entre los BEARER TOKENS y los JWT ( Json Web Tokens) es que los JWT son stateless y no necesitan ser guardados en una Tabla Hash.
+
+En OAUTH2 no especifica el formato de access_token así que se puede usar JWT.
+
+
 
 
 
