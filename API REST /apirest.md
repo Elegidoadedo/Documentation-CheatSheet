@@ -89,3 +89,11 @@ Si el DELETE funciona ( code 200), al realizar un método GET en ese recurso ha 
 
 
 
+<h2>PROBLEMAS CON REST, SOLUCIONADOS CON GRAPHQL</h2>
+
+* Al trabajar con múltiples recursos, en API REST equivale a más queries
+* No solo recibimos , en API REST, la info que necesitamos, si no todo el EndPoint
+* En GraphQl es hard-typing, lo que auyda a detectar errores
+* GraphQL puede manejar todo desde un solo end-point.
+* En las queries de  graphQL pides solo los campos que necesitas. 
+
