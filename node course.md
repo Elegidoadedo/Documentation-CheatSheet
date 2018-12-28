@@ -74,3 +74,29 @@ Internamente, Promise puede encontrarse en uno de tres estados:
 Pending, cuando el valor final no está disponible aún. Este es el único estado que puede cambiar a uno de los otros dos estados.
 Fulfilled, cuando y si el valor final esté disponible. Un valor fulfillment viene asociado permanentemente con Promise. Este puede ser cualquiera, incluyendo undefined.
 Rejected, si un error impidió que el valor final se determine. Una valor rejection viene asociado permanentemente con Promise. Este puede ser cualquier valor, incluyendo undefined, aunque por lo general es un objeto Error, como en el manejo de excepciones.
+
+
+Tipo de errores:
+
+Standar Javascript errors
+Errores de sintaxis, de evaluación, contrucción de URIs, etc.
+
+System errors
+Cuando se falla en la lectura de algún archivo, etc.
+
+User-specified errors
+Cuando lanzamos un Throw y especificamos un mensaje personalizado.
+
+Assertion Errors
+Errores que definen aspectos lógicos dentro de Node.js. Violaciones de lógica como TRUE == FALSE, por ejemplo
+
+Código de estado HTTP
+1xx: Information
+2xx: Successful
+3xx: Redirection
+4xx: Client error
+5xx: Server error
+
+Detalle de cada código
+https://developer.mozilla.org/es/docs/Web/HTTP/Status
+https://i.imgur.com/bBN3VIq.png
