@@ -99,4 +99,19 @@ Código de estado HTTP
 
 Detalle de cada código
 https://developer.mozilla.org/es/docs/Web/HTTP/Status
-https://i.imgur.com/bBN3VIq.png
+<img src="https://i.imgur.com/bBN3VIq.png">
+
+Creación de un servidor web básico con HTTP
+Si una conexión de cliente emite un evento de ‘error’, se reenviará aquí. El "listener"de este evento es responsable de cerrar / destruir el socket subyacente. Por ejemplo, uno puede desear cerrar con más gracia el socket con una respuesta HTTP personalizada en lugar de cortar bruscamente la conexión.
+
+        const http = require('http')
+        const fs = require('fs')
+
+        const server = http.createServer((req, res) => {
+            fs.readFile("./resources/my_page.html", (err, data) => {
+                if(err){console.error(err); return;}
+                res.end(data)
+            })
+        })
+
+        server.listen(3000)
