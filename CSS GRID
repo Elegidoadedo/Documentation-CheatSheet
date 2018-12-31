@@ -12,3 +12,9 @@ Grid Cell: Celdas, espacio en dos filas adyacentes y 2 columnas adyacentes.
 
 Grid Area: Espacio rodeado por 4 grid lines
 
+
+example GRID + 3 COL: 
+.container{
+            display: grid;
+            grid-template-columns: repeat(3,200px);
+        }
