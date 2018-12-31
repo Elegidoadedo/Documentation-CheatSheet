@@ -39,3 +39,9 @@ Durabilidad: es otro principio que no aplica necesariamente en los sistemas NoSQ
 Consistency = Consistencia: Debe retornar un dato válido, me debe permitir a cualquier estructura de su base de datos
 Availability = Disponibilidad: Cuando haga una solicitud no me va a importar que nodo del sistema esta up time o down time o sin funcionamiento. Un dato debe estar replicado en al menos tres nodos.
 Partition = Particionamiento: Es como yo parto esa información por lo menos en tres nodos para evitar que se pierdan mensajes.
+
+También hay que tener en cuenta que:
+
+El escalamiento vertical (Scale UP) = requiere apagar el servidor para así aumentar sus recursos de memoria y procesamiento. Ejemplo: tengo un servidor de 1 Tera de disco y a futuro voy a necesitar mas memoria de disco, así que lo que hago es quitar esa memoria de disco de 1 Tera y remplazarlo por un disco de 2 Teras y para eso tuve que desconectar el servidor, quitar la base de datos y de mas para hacer este procedimiento quedando al final un solo disco de 2 Teras.
+
+El escalamiento horizontal (Scale Out) = no es necesario apagar el servidor ya que permite ir acomplando mas memoria de disco sin necesidad de apagar o desconectar el servidor. Ejemplo: tengo un servidor de 1 Tera de disco y a futuro voy a necesitar mas memoria de disco, así que lo que hago es poner otro disco de 1 Tera sin necesidad de quitar el otro, en ese caso tendría dos discos de un Tera (1 Tera + 1 Tera).
