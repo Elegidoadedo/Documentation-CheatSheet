@@ -18,3 +18,8 @@ example GRID + 3 COL:
             display: grid;
             grid-template-columns: repeat(3,200px);
         }
+        
+        
+grid-column-gap: value; Espaciado entre columnas
+grid-row-gap: value; Espaciado entre filas
+grid-gap: rows columns Espaciado
