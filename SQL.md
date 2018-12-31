@@ -28,3 +28,14 @@ insert Permite insertar en una table una nueva tupla.
 update Permite actualizar uno o muchos atributos.
 delete Permite eliminar uno o muchos atributos.
 replace Permite reemplazar un atributo.
+
+Bases de Datos no Relacionales (Not Only SQL)
+ACID este concepto es uno de los pilares de las bases de datos relacionales.con el cual se asegura la integridad y consistencia de los datos a pesar de la concurrencia proporcionando un entorno seguro para las operaciones que realizan.
+Atomicidad: Es una de las principales características de las bases de datos Relacionales, que no siempre se cumplen en las Bases de Datos NoSQL
+Consistencia: no siempre una base de datos noSQL es consistente en sus datos, esto se debe a su descentralizacion. Es decir que sus datos pueden estar replicados.
+Aislamiento: los sistemas de datos NoSQL no siempre utilizan aislamiento debido a que manejan de manera distinta la concurrencia, mientra que bases de datos relacionales bloquean los accesos a los datos para garantizar la consistencia de los mismos. En la bases de datos NoSQL los procesos se replican, es decir se realizan copias de los mismo para cada usuario que lo solicite.
+Durabilidad: es otro principio que no aplica necesariamente en los sistemas NoSQL, esto se debe a que en algunas instancias los datos no son consistentes por lo tanto no se puede garantizar la persistencia en el tiempo de los mismos. Una manera de solucionarlo esto es replicar los datos para garantizar la consistencia y durabilidad de los datos
+**CAP**
+Consistency = Consistencia: Debe retornar un dato válido, me debe permitir a cualquier estructura de su base de datos
+Availability = Disponibilidad: Cuando haga una solicitud no me va a importar que nodo del sistema esta up time o down time o sin funcionamiento. Un dato debe estar replicado en al menos tres nodos.
+Partition = Particionamiento: Es como yo parto esa información por lo menos en tres nodos para evitar que se pierdan mensajes.
