@@ -140,3 +140,35 @@ En una BD NoSQL no se crea una base de datos hasta que no se tenga toda la data 
 Aparte de pensar en la consistencia de los datos se debe pensar también en una estrategia de redes y comunicaciones.
 Los shards tienden a estar en máquinas separadas con puertos diferentes para que los módulos controladores puedan saber dónde están.
 MongoDB se divide en Shards. Los shards se llaman Mongod. Las estructuras principales se llaman Mongos. Un cliente se conecta (por ejemplo) a través de un JPA a los Mongos. Los nodos de configuración define toda la estructura de la base de datos.
+
+Colecciones : objetos principales de la Base de Datos no relacional
+Donde se pueden guardan información utilizando distintas llaves para acceder a datos
+
+ejm:
+Name : ‘Julieta’
+
+Pero la colección se debe especificarse en una ubicación, en un shard especifico.
+
+La información se puede distribuir en varios shards , esto incluye a que los datos de una colección pueden estar en 2 o mas shards
+
+RAID 1 : Espejo de datos Nodo A es igual que en un Nodo B, se necesita mucha velocidad
+A>A
+A<A
+
+REPLICA : Mediante Replica, asegura alta disponibilidad
+B->B
+
+LOG: para averiguar como estaba la data en un determinado tiempo.
+Log 1 : valor 3
+Log 2: valor 4
+Quiere decir que surgio 1 dato modificado alterando el valor
+
+Snapshots (snaps) : Imagenes de un servidor, cluster, nodo, en un determinado momento. (para luego restaurar o replicar la información en otro ambiente)
+
+Variables a considerar en la administración en NoSQL
+N numero de Replicas , Numero de Nodos (en hadoop recomienda 3 replicas, o más)
+W Numero de Replicas Exitosas para hacer Update (se debe esperar que sea 3 siempre y cuando tengas 3 nodos)
+R Replicas. Para consultar para lectura, cuantos nodos debo consultar para saber que la info es consistente.
+
+Formula
+W+R>N : Para que sea consistente
