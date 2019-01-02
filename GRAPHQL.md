@@ -206,3 +206,25 @@ Realizamos la consulta:
             descripcion @include(if: $conDescription)
         }
         }
+
+**INPUT TYPE**
+
+Los Input Types nos permiten pasar objetos complejos (y/o completos) en las mutaciones de manera sencilla, en lugar de pasar parametro por parametro vamos a pasar un solo parametro, el Input Type NuevoProfesor.
+
+Implementación del Input Type en server:
+
+        inputNuevoProfesor {
+            nombre: String!
+            genero: Genero
+        }
+Consulta del lado del cliente:
+
+        mutation {
+        profesorAdd(profesor: {
+            nombre: "Laura"
+            genero: FEMENINO
+            nacionalidad: "Mexico"
+        }) {
+            id
+        }
+        }
