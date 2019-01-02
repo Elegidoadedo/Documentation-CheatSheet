@@ -172,3 +172,6 @@ R Replicas. Para consultar para lectura, cuantos nodos debo consultar para saber
 
 Formula
 W+R>N : Para que sea consistente
+
+InfiniBand es un bus de comunicaciones serie de alta velocidad, baja latencia y de baja sobrecarga de CPU, diseñado tanto para conexiones internas como externas.
+
