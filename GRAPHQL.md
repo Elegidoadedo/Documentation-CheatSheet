@@ -138,3 +138,8 @@ Podríamos verlos como una analogía a los endpoints que tenemos en una arquitec
 
 Graphql también nos permite hacer modificaciones, y para hacerlas, tenemos un tipo especial de endpoints que se llaman Mutation.
 A través de ellos vamos a poder insertar elementos, modificar elementos, borrar elementos, etc.
+
+**La Interfaz de GraphiQL**
+
+GraphiQL es la herramienta que más vamos a utilizar para interactuar con un esquema de GraphQL.
+Esta herramienta fue desarrollada por la misma gente de Facebook y nos permite hacer consultas, ver la documentación, interactuar con el esquema de GraphQL y así entender las queries que vamos a ejecutar.
