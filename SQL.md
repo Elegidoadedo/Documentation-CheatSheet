@@ -110,3 +110,33 @@ Borrar un item:
 
 JOINS 
 <img src="https://static.platzi.com/media/user_upload/10-%20SQL%20Joins-5b08f55f-29fc-4307-8ea4-5195f07af1b0.jpg">
+
+
+<h1> Noo SQL Aplicado</h1>
+
+
+**RDBMS**: Ofrece escalabilidad en una sola máquina, mejorando así los niveles de servicio de la base de datos.
+
+**Ventajas**
+
+Esquemas de Replicacion
+Esquemas de Backup
+Esquemas de Disaster Recovery
+**Desventajas **
+
+Crecimiento Limitado
+Imposibilidad de de escalar varios sistemas en un mismo equipo
+
+
+**Sharding:**
+
+Se crean pequeños módulos o paquetes que van a tener pequeñas partes de la base de datos o pequeñas réplicas.
+Esto lo que hará es permitir unir otros shard a la base de datos y escalarlo más fácil.
+Utiliza llaves dentro de los shard. Pueden ser tablas hash o llaves compartidas.
+Las llaves compartidas generalmente se trabaja dentro del nodo maestro. Es reccomenable clusterizar el nodo maestro para tener varios por si el principal falla.
+Los diferentes shard se van a comunicar con el nodo maestro, el cuál le va a dar toda la indexación. Va a tener las llaves maestras para que todos los shard funcionen en el mismo sistema.
+En cada shard se pueden manejar registros o transacciones diferentes.
+En una BD NoSQL no se crea una base de datos hasta que no se tenga toda la data cargada. Las colecciones están en un módulo de datos que a su vez está en una base de datos y que será distribuida.
+Aparte de pensar en la consistencia de los datos se debe pensar también en una estrategia de redes y comunicaciones.
+Los shards tienden a estar en máquinas separadas con puertos diferentes para que los módulos controladores puedan saber dónde están.
+MongoDB se divide en Shards. Los shards se llaman Mongod. Las estructuras principales se llaman Mongos. Un cliente se conecta (por ejemplo) a través de un JPA a los Mongos. Los nodos de configuración define toda la estructura de la base de datos.
