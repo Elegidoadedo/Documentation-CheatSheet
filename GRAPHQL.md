@@ -143,3 +143,9 @@ A través de ellos vamos a poder insertar elementos, modificar elementos, borrar
 
 GraphiQL es la herramienta que más vamos a utilizar para interactuar con un esquema de GraphQL.
 Esta herramienta fue desarrollada por la misma gente de Facebook y nos permite hacer consultas, ver la documentación, interactuar con el esquema de GraphQL y así entender las queries que vamos a ejecutar.
+
+Para usar variables es necesario usar la forma completa de la query.
+
+        query <nombreQuery>(<$variable>: type = <valor por defecto>) {
+            ...
+        }
