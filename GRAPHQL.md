@@ -123,4 +123,9 @@ Requerido: Signo de admiración al final, y significa que ese campo no puede ser
 Corchetes: Para denotar que tenemos una lista de lo que sea que está en medio.
 Tenemos también la posibilidad de hacer una lista requerida de la siguiente forma:
 
-[string!]!
+ejemplo:
+
+        String! NOT NULL
+        [String] LISTA
+        [String] ! LISTA QUE NO PUEDE SER NULL PERO QUE SIN EMBARGO SUS ELEMENTOS PUEDEN SER NULL
+        [String!] ! LISTA QUE NO PUEDE SER NULL NI TAMPOCO CONTENER NI UN SOLO ELEMENTO NULL
