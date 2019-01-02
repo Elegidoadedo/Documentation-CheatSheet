@@ -149,3 +149,60 @@ Para usar variables es necesario usar la forma completa de la query.
         query <nombreQuery>(<$variable>: type = <valor por defecto>) {
             ...
         }
+
+**ALIAS**
+Uno de los motivos de usar un alias es al momento de pedir varios recursos del mismo Type con diferente ID para que la Key (En este caso curso) no se pise o se sobre escriba (Graphql no deja que eso pase).
+
+        {
+        cursoMasVotado: curso(id: 1) {
+            titulo
+            rating
+        }
+        cursoMasVisto: curso(id: 2) {
+            titulo
+            descripcion
+        }
+        }
+
+**FRAGMENTS**
+
+Los Fragments son una manera que nos permite GraphQL en las consultas de agrupar campos para poder utilizarlos de una manera conveniente para nuestra consulta.
+
+    {
+    curso(id: 1) {
+        ...CamposNecesarios
+    }
+    cursos {
+        ...CamposNecesarios
+    }
+    }
+
+    fragment CamposNecesarios onCurso {
+    titulo
+    descripcion
+    }
+
+**DIRECTIVAS**
+
+Las Directivas nos permiten pedir ciertos valores de una consulta dependiendo de si una variable es true o false.
+
+Existen 2 tipos:
+
+@include incluye el campo si el argumento es true.
+@skip omite el campo si el argumento es true. (revirtiendo la condición)
+
+Declaramos la variable:
+
+        {
+        "conDescription": true
+        }
+
+Realizamos la consulta:
+
+
+        query Cursos($conDescription: Boolean!) {
+        cursos {
+            titulo
+            descripcion @include(if: $conDescription)
+        }
+        }
