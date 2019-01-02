@@ -45,3 +45,68 @@ También hay que tener en cuenta que:
 El escalamiento vertical (Scale UP) = requiere apagar el servidor para así aumentar sus recursos de memoria y procesamiento. Ejemplo: tengo un servidor de 1 Tera de disco y a futuro voy a necesitar mas memoria de disco, así que lo que hago es quitar esa memoria de disco de 1 Tera y remplazarlo por un disco de 2 Teras y para eso tuve que desconectar el servidor, quitar la base de datos y de mas para hacer este procedimiento quedando al final un solo disco de 2 Teras.
 
 El escalamiento horizontal (Scale Out) = no es necesario apagar el servidor ya que permite ir acomplando mas memoria de disco sin necesidad de apagar o desconectar el servidor. Ejemplo: tengo un servidor de 1 Tera de disco y a futuro voy a necesitar mas memoria de disco, así que lo que hago es poner otro disco de 1 Tera sin necesidad de quitar el otro, en ese caso tendría dos discos de un Tera (1 Tera + 1 Tera).
+
+MYSQL ESTRUCTURA DE QUERYS NIVEL NOOB
+
+MYSQL WORKBENCH-> Aplicación que ayuda a estructurar SQL DB
+
+Ver el mapa conceptual de una DB:
+    Importar la DB, Click en Revrse Engineer. 
+
+    En el mapa, Leyenda:
+
+        Llave = LLave primaria
+        Rombo azul=  Not null
+        Rombo Rojo= Llave foranea
+
+TIPOS DE QUERYS:
+
+SHOW columns FROM Schema.actor <-> Muestras las keys
+
+SELECT * FROM Schema.actor <-> Muestra los valores
+
+SELECT actor_id, last_name FROM Schema.actor <-> Se seleccionan varips campos ( también sirve con Schemas)
+
+SELECT actor_id, last_name FROM Schema.actor ORDER BY last_name des <-> Ordena el resultado por last_name en orden descendente
+
+SELECT actor_id, last_name FROM Schema.actor GROUP BY last_name <-> agrupa los resultados en last_name
+
+            SELECT last_name, count(first_name) FROM schema.actor
+            GROUP BY last_name ORDER BY last_name asc;
+    
+    Mostrará el número de personas con el mismo apellido ordenado por apellidos.
+
+            SELECT C.first_name, A.address
+            FROM schema.Customer as C, schema.address as A
+            WHERE C.address_id = A.address_id
+    El comando AS se utiliza como alias, podemos seleccionar los que no se repiten con:
+             SELECT DISTINT Schema.data FROM schema
+    
+    Podemos utilizar query parcial (que empiza por ciertas palabras, contenga o termine en X):
+            
+            SELECT * FROM schema.film
+            WHERE title LIKE 'ZO%'
+                            '%ZO'
+                            '%ZO%'
+
+ MODIFICAR UAN TABLA:
+
+        ALTER TABLE schema.film ADD COLUMN fecha timestamp
+
+        ALTER TABLE schema.film DROP COLUMN fecha;
+
+MODIFACR DATOS DE TABLA:
+
+        UPDATE schema.film set title ='nombre' WHERE film_id=2
+
+Modificará el item con id 2
+
+        INSERT INTO schema.film VALUES(1002, 'nombre', 'blablabla', 2019-01-02)
+Creará un nuevo item con los valores del paréntesis.
+
+Borrar un item:
+        DELETE FROM schema.film WHERE film=id='1002'
+
+
+JOINS 
+<img src="https://static.platzi.com/media/user_upload/10-%20SQL%20Joins-5b08f55f-29fc-4307-8ea4-5195f07af1b0.jpg">
