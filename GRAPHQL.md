@@ -129,3 +129,12 @@ ejemplo:
         [String] LISTA
         [String] ! LISTA QUE NO PUEDE SER NULL PERO QUE SIN EMBARGO SUS ELEMENTOS PUEDEN SER NULL
         [String!] ! LISTA QUE NO PUEDE SER NULL NI TAMPOCO CONTENER NI UN SOLO ELEMENTO NULL
+
+**Root Type: Query**
+
+Podríamos verlos como una analogía a los endpoints que tenemos en una arquitectura .REST.
+
+**Root Type: Mutation**
+
+Graphql también nos permite hacer modificaciones, y para hacerlas, tenemos un tipo especial de endpoints que se llaman Mutation.
+A través de ellos vamos a poder insertar elementos, modificar elementos, borrar elementos, etc.
