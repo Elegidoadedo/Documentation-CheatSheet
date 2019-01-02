@@ -15,11 +15,28 @@ El principal objetivo de GraphQL es evitar las múltiples consultas al servidor.
 
 **DIFERENCIA ENTRE REST Y GRAPHQL**
 
+Rest
+Es solo una convención: Es una manera de comunicarse entre el servidor y cliente, cada uno tiene sus reglas.
+GraphQL
+Lenguaje tipado y validable: Le damos una forma de lo que recibe y lo que devolvemos. Ademas que le agrega seguridad
 
-Rest es solo una convención, lo que quiere decir que es solo la manera en que nos ponemos de acuerdo para comunicarnos. Sin embargo, el hecho de que no hay unas reglas establecidas genera que cada uno utilice la convención de la forma que más le convenga y esto hace que no haya un orden establecido.
+Rest
+Servidor expone recursos: Los clientes se tienen que adecuarse a como están expuestos
+GraphQL
+El cliente define que recibe: Haciendo una consulta, de la estructura que define como respuesta
 
-GraphQL por otro lado, es un lenguaje tipado y validable, por esto conocemos la forma en la que debemos enviar y recibir.
+Rest
+Hace overfetching: Envía más información que necesita
+GraphQL
+Envía lo necesario: Se tiene control total de las respuestas que se esperan del servidor
 
-En REST el servidor expone una serie de recursos, mientras que en GraphQL el cliente es quien define qué quiere recibir. Además, REST tiene el problema del overfetching que significa que envía más información de la que se necesita. En GraphQL se envía solo lo necesario.
+Rest
+Multiples request por vista: Muy costoso en performance, básicamente es una aplicación en blanco que aún no ha cargado datos o tiene custom endpoints
+GraphQL
+Hace solo un request por vista: Enviados en un solo row
 
-Al ser un lenguaje tipado, GraphQL es un lenguaje documentado por definición.
+Rest
+Documentación ajena al desarrollo: No hay un estándar por lo que depende mucho del desarrollador para mantenerla.
+GraphQL
+Documentado por definición.
+Documentado por definición: Al ser un lenguaje tipado se define un schema que ya esta documentado por definiciòn
