@@ -23,3 +23,17 @@ example GRID + 3 COL:
 grid-column-gap: value; Espaciado entre columnas
 grid-row-gap: value; Espaciado entre filas
 grid-gap: rows columns Espaciado
+
+
+Definir el tamaño de las columnas dentro de un grid:
+
+grid-column-start: 1;
+grid-column-end: 3;
+Para escribir esto en una sola linea:
+
+grid-column: inicio / final;
+Para usar por espacios: span #
+Para usar el espacio de toda la columna usamos -1 al final Ejemplo: grid-column: 1/ -1;
+
+grid-auto-rows : especifica la altura de las filas añadidas del grid implícito.
+grid-auto-rows : especifica el ancho de las columnas añadidas del grid implícito

@@ -228,3 +228,49 @@ Consulta del lado del cliente:
             id
         }
         }
+
+**EJEMPLO DE SCHEMA EN GRAPHQL**
+
+        const { gql } = require('apollo-server-express')
+
+        const typeDefs = gql`
+
+            """Esto es un curso en el sistema"""
+            typeCurso {
+                id: ID!
+                titulo: String!
+                """Esta es la descripción del curso"""
+                descripcion: String!
+                profesor: Profesor
+                rating: Float
+                comentarios: [Comentario]
+            }
+
+            typeProfesor{
+                id: ID!
+                nombre: String!
+                nacionalidad: String!
+                genero: Genero
+                cursos: [Curso]
+            }
+
+            enum Genero{
+                MASCULINO
+                FEMENINO
+            }
+
+            typeComentario{
+                id: ID!
+                nombre: String!
+                cuerpo: String!
+            }
+
+            typeQuery{
+                cursos: [Curso]
+                profesores: [Profesor]
+                curso(id: Int): Curso
+                profesor(id: Int): Profesor
+            }
+        `
+
+        module.exports = typeDefs
