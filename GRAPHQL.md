@@ -274,3 +274,20 @@ Consulta del lado del cliente:
         `
 
         module.exports = typeDefs
+**@DEPRECATED(REASON:COMENTARIO)**
+
+La directiva @deprecated indica a GraphQL que el campo con esta directiva es un campo obsoleto o que está en desuso … a manera de advertencia, y a pesar que no se muestra en la documentación de GraphiQL, aún se podría consultar y pedir en los resultados porque aún forma parte del esquema (por el momento, aunque no será así en el futuro)
+
+**MOCK**
+La herramienta de addMockFunctionsToSchema viene con el paquete de apollographql, y permite crear datos falso para dev.
+        addMockFunctionsToSchema({
+            schema,
+            mocks:{
+                Curso: () =>{
+                    return{
+                    id:1,
+                    titulo:'grapxxx'
+                    }
+                }
+            }
+        })
