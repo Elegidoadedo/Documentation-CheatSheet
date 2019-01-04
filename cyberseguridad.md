@@ -38,3 +38,92 @@ Es ejecutar procesos para que la información de la compañía no se vean afecta
 Si estoy seguro de que estoy aplicando todos los procedimientos y lo hago de forma correcta, no.
 
 Verificar estos procesos de seguramiento de la información debe convertirse en un hábito.
+**El Compromiso Empieza con las Personas**
+
+La seguridad empresarial es un compromiso de las personas. La mayoría de los ataques vienen desde dentro de la organización.
+
+Se deben de evitar contraseñas que contengan información personal y sea muy facil de adquirir.
+
+Existen muchos programas que ayudan a gestionar las contraseñas.
+
+Cada vez que llegue un correo que te pide que te autentiques, primero fijarse si el texto es de uno corporativo. De igual manera, hay que verificar si el dominio es el correcto.
+
+Para poder generar una contraseña fuerte, se puede usar How Secure Is My Password.
+
+Los usuarios generalmente tienen un aspecto legal. Todo lo que haga con mi usuario va a tener un afecto con la información que trabaje.
+
+**Diferencia entre Datos Personales y Empresariales**
+
+Los datos personales son aquellos que solo me interesan a mi. Tiene que ver con mis amigos, mi familia, mi círculo social más cercano.
+
+Ejemplos de datos personales:
+
+Mis redes sociales
+Cuentas bancarias
+Recibios de teléfono, agua, luz, etc.
+Información familiar
+Los datos empresariales son aquellos que le importa a la empresa u organización.
+
+Ejemeplo de información organizacional:
+
+Redes sociales de la empresa
+Datos del cliente
+Estructura interna
+Información financiera
+Información tributaria
+Algunas empresas tienen regulaciones que prohíben cualquier tipo de comunicación con algunos países.
+
+
+**tipos de encriptado**
+Dos tipos de encriptación
+- Algoritmos Simétricos: proteger el algoritmo.
+
+    ○ 3DES (DES triple)
+
+    ○ IDEA
+
+    ○ AES
+
+    ○ Skipjack
+
+    ○ Blowfish
+
+    ○ Twofish
+
+- Algoritmos Asimétrios. Proteger las claves.
+
+    ○ RSA (Rivest-Shamir-Adleman). Los navegadores utilizan RSA para establecer una conexión segura.
+
+    ○ Diffie-Hellman. Lo usan SSL, SSH, IPsec (las VPN utilizan IPsec).
+
+    ○ ElGamal
+
+    ○ Criptografía de curva elíptica (ECC)
+
+
+    **TO DO LIST**
+
+    **Checklist Base de Seguridad**
+
+- Cambiar mi contraseña al menos cada 6 meses.
+- Usar una contraseña que use caracteres especiales y no sea fácil de encontrar con mi información pública.
+- Encriptar mis dispositivos.
+- No abrir correos sospechosos que me pidan información personal o autenticarme en sistemas agenos a la organización.
+- Evitar responder mensajes de texto promocionales desde dispositivos móviles asignados y que sean empresariales.
+- Evitar almacenar datos de los clientes en dispositivos personales.
+- Evitar contestar preguntas personales en un contecto empresarial.
+- No dar información confidencial a terceros.
+- Cifrar mis dispositivos móviles.
+- Proteger mis dispositivos móviles. Por ejemplo, dejándolos en la cajuela del auto o usando guayas de seguridad.
+- Evitar almacenar contraseñas en lugares pocos seguros.
+- Revisar si las aplicaciones que tengo instaladas son falsas mirando el origen de los desarrolladores y los permisos que tiene la aplicación.
+
+**¿Qué hacer al ser víctima de un ataque?
+Si se ha sido víctima de un ataque:**
+
+- Dar la alerta de inmediato.
+- Informar:
+    - Cuál fue la información comprometida.
+    - Cuándo pasó
+    - Con qupe sistema pasó
+    - Cómo ocurrió
