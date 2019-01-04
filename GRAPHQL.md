@@ -319,7 +319,7 @@ Definimos los campos Nuevoprofesor en el Schema de profesor
     input Nuevoprofesor{
         Nombre: String!
         Nacionalidad: String!
-        Genero: Enum
+        genero: Genero //Genero está definido en Schema como enum
     }
 
 Modificamos los Resolver para tratar la query
@@ -335,4 +335,41 @@ Modificamos los Resolver para tratar la query
         //console.log(args)
         const profesorAdded = await Profesor.query().insert(args.profesor)
         return profesorAdded
-        },
+        }
+
+**Edit Mutation**
+
+Definimos la query 
+
+    type mutation{
+        profesorEdit(profesorId, profesor:ProfesorEditable):profesor
+    }
+En una mutation siempre devuelve el objeto a cambiar.
+
+Definimos los campos Nuevoprofesor en el Schema de profesor
+    
+    input ProfedorEditable{
+        nombre: String
+        nacionalidad: String //No hacer requerido * para edit
+        genero: Genero //Genero está definido en Schema como enum
+    }
+
+Modificamos los Resolver para tratar la query
+
+    Mutation:{
+        profesorAdd:(_, arg) =>{
+            return Profesor.query().patchAndFetchById(args.profesorId, args.profesor)
+        }
+    }
+
+La query en este caso sería así
+
+    mutation NombreQuery{
+        profesorEdit(profesorId:1, profesor:{
+            nombre:"Juan"
+        }){
+            //lo que nos devuleve la query
+            id
+            nombre
+        }
+    }
