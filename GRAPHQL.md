@@ -329,3 +329,10 @@ Modificamos los Resolver para tratar la query
             return Profesor.query().insert(args.profesor)
         }
     }
+**objectionJS** Hasta el día de hoy Objetion en su documentación API recomenienda que las operaciones de persistencia CRUD a la BD se hagan de forma asíncrona ( con justa razón debido al single Thread) para evitar esto cambia el código por este en el resolver.js:
+
+    profesorAdd: async (_, args) => {
+        //console.log(args)
+        const profesorAdded = await Profesor.query().insert(args.profesor)
+        return profesorAdded
+        },
