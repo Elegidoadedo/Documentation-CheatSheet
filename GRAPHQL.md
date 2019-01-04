@@ -303,3 +303,22 @@ Permite trabajar con DB SQL en un archivo.
 **KNEX**
 
 Paquete que ayuda con la migración en DBs 
+
+
+**añadir mutation**
+
+Definimos la query 
+
+    type mutation{
+        profesorAdd( porfesor:Nuevoprofesor) :profesor
+    }
+En una mutation siempre devuelve el objeto a cambiar.
+
+Definimos los campos Nuevoprofesor en el Schema de profesor
+    
+    input Nuevoprofesor{
+        Nombre: String!
+        Nacionalidad: String!
+        Genero: Enum
+    }
+
