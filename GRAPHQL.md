@@ -429,3 +429,7 @@ Tiene clientes para iOS y android
 https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png
 
 <img src="https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png">
+
+**GRAPHQL VOYAGER -> HACE ESQUEMA DE UN GRPAHQL**
+
+https://github.com/APIs-guru/graphql-voyager
