@@ -422,3 +422,10 @@ Funciona con cualquier framework y vanilla js
 Estructura flexible
 Adopción incremental
 Tiene clientes para iOS y android
+
+
+**CHEATSHEET**
+
+https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png
+
+<img src="https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/master/graphql-shorthand-notation-cheat-sheet.png">
