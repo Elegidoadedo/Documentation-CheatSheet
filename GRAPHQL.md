@@ -395,6 +395,37 @@ En resolver añadimos:
             .then(()=> profesor)
         })
     }
+**SEARCH QUERY**
+
+La query sería así:
+
+    {
+        buscar(query:"GRAPHQL"){
+            __typename
+            ... on Profesor{
+                nombre
+            }
+            ... on Curso{
+                titulo
+            }
+        }
+    }
+
+En resolver añadimos:
+
+    buscar: (_, args) =>{
+        return [
+            Profesor.query().findById(1)
+            Curso.query().findbyId(1)
+        ]
+    }
+
+    ResultadoBusqueda:{
+        __resolvetype:(obj)=>{
+            if(obj.nombre) return profesor //usar un parámetro único
+            return curso
+        }
+    }
 
 
 **APOLLO VS RELAY**
@@ -433,3 +464,7 @@ https://raw.githubusercontent.com/sogko/graphql-shorthand-notation-cheat-sheet/m
 **GRAPHQL VOYAGER -> HACE ESQUEMA DE UN GRPAHQL**
 
 https://github.com/APIs-guru/graphql-voyager
+
+**LISTA DE LINKS DE LIBRERIAS PARA GRAPHQL**
+
+https://github.com/chentsulin/awesome-graphql
