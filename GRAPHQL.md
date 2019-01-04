@@ -322,3 +322,10 @@ Definimos los campos Nuevoprofesor en el Schema de profesor
         Genero: Enum
     }
 
+Modificamos los Resolver para tratar la query
+
+    Mutation:{
+        profesorAdd:(_, arg) =>{
+            return Profesor.query().insert(args.profesor)
+        }
+    }
