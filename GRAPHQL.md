@@ -373,3 +373,25 @@ La query en este caso sería así
             nombre
         }
     }
+
+**Delete Query**
+
+La query sería así:
+
+    mutation BorrarProfedor{
+        profesorDelete(profesorId:1){
+            nombre
+        }
+    }
+
+Con apollo el delete devuelve el nombre de filas eliminadas, para retornar un valor de ese objeto borrado hemos de hacer un findById antes y guardarlo.
+
+En resolver añadimos:
+
+    profesorDelete(_,args) =>{
+        return Profesor.query().findById(args.profesorId)
+        .then((profesor)=>{
+            return profesor.query().deleteById(args.profesorId)
+            .then(()=> profesor)
+        })
+    }
