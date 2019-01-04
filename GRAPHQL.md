@@ -395,3 +395,30 @@ En resolver añadimos:
             .then(()=> profesor)
         })
     }
+
+
+**APOLLO VS RELAY**
+Un cliente es una librería (Js, en este caso) que nos permite tener ciertas ventajas al realizar un request a GraphQL
+
+Consultas más fáciles
+Caching
+Normaliza datos
+Maneja Optimistic UI
+Helpers para manejar paginación.
+Los más usados son Apollo y relay.
+
+--Relay--
+
+Creado por fb
+Es el cliente más maduro
+Optimizado para alto performance
+Solo para React
+
+--Apollo--
+
+Creado por Meteor
+API sencilla
+Funciona con cualquier framework y vanilla js
+Estructura flexible
+Adopción incremental
+Tiene clientes para iOS y android
