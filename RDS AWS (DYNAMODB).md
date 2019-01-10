@@ -58,3 +58,24 @@ Este servicio tiene las siguientes características:
 Las migraciones homogéneas son migraciones donde la base de datos de origen y la de destino puede tener diferentes versiones del mismo motor, o son bases de datos compatibles entre sí (MySQL y Aurora, por ejemplo).
 
 También podemos realizar migraciones heterogéneas, donde la base de datos de origen no es compatible con la de destino. Estas migraciones NO siempre son posibles, y antes de realizar la migración vamos a necesitar convertir el esquema de la base de datos con la herramienta AWS Schema Conversion Tool.   
+**AURORA**
+
+
+AWS recomiendo a Aurora (está desarollada por ellos) asegurando 5x velocidad a motores SQL y 3 x a mototres POSTGRESQL
+
+Además de ser una base de datos muy potente y robusta, Aurora nos permite un nivel de customización muy alto, puede crecer hasta 64 TB y nuestra data esta replicada en múltiples Az.
+
+    Otras características de Aurora:
+
+        - Autoreparación: Guardar la información de la parte dañada en otra parte del disco y reparar el problema automáticamente.
+        - Cache Warm: Hacer un precalentamiento de la caché al iniciar las consultas más comunes y sus resultados.
+        - Recuperación de accidentes: Si falla la instancia principal, Aurora promueve una réplica de lectura o crea una nueva instancia principal.
+
+        
+**DYNAMODB**
+
+DynamoDB es el servicio para bases de datos NOSQL de AWS completamente administrado (AWS se encarga de todo el background para que nosotros trabajemos nuestra aplicación), compuesto de varios nodos y distribuido en varias regiones (altamente disponible con replicación en diferentes locaciones), es una base de datos de baja latencia con almacenamiento en caché y es completamente escalable sin downtime de nuestra aplicación.
+
+Este servicio se basa en dos conceptos importantes: las unidades en lectura (RCU, 4kb de bloques por segundo) y las unidades de escritura (WRU, 1kb de bloques por segundo). Con base en estos dos parámetros se determina el costo de nuestras bases de datos y el autoescalamiento.
+
+La unidad fundamental de DynamoDB son las tablas, que están compuestas por items, que están compuestos por atributos (por ejemplo, la tabla trabajadores está compuesta por, trabajadores, cada uno con su nombre, edad, identificación y toda su información). También debemos entender los conceptos de partition key (llaves primarias para el espacio de almacenamiento) , sort keys (para organizar y ordenar la información) y local and global secondary index (otros atributos que podemos utilizar junto a las partition keys u otros atributos para obtener información más especifica y con mejor rendimiento).
