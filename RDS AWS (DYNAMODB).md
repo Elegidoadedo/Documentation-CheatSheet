@@ -106,3 +106,28 @@ PARTICIONES DYNAMO
     - Para almacenar elementos utilizamos claves principales simples o compuestas, DynamoDB utiliza estas claves para asignar las particiones 🤔
     - Entre más aleatorias sean las claves principales, mejor performance tiene la base de datos 🎉
     - Cuando utilizamos claves compuestas, el orden de los elementos depende de la clave de ordenación 💡
+
+
+**scan**
+
+Las Operaciones Scan se encargan de escanear por completo nuestras tablas para examinar todos sus elementos y comprobar si presentan los valores solicitados, pero son muy poco eficientes ya que utilizan bastantes unidades de lectura y aumentan los costos de nuestra base de datos, debemos evitar estas operaciones para tablas grandes.
+
+AWS nos recomienda realizar operaciones pequeñas a lo largo del tiempo en vez de hacer una sola operación muy larga, también podemos configurar límites de tamaño para evitar los escaneos completos y duplicar nuestras tablas para realizar estas operaciones sobre tablas no principales y no afectar su rendimiento.
+
+    - Las operaciones scan examinan los elementos de nuestras tablas para comprobar sus valores 🤓
+    - Son completamente ineficientes y deberíamos evitarlas 👎 😥😠
+    - Pueden gastar todos los niveles de lectura de la base de datos
+    - Haciendo operaciones pequeñas a lo largo del tiempo y configurando límites podemos evitar el escaneo completo y subir los precios 🤔
+    - Si duplicamos las tablas para las operaciones NO afectamos el performance de las tablas principales 🆗
+
+**QUERY**
+
+Las Operaciones Query (operaciones de consulta) nos permiten buscar elementos en cualquier tabla o índice secundario en base a su clave principal compuesta para optimizar la petición.
+
+En vez de escanear toda la tabla (como en las operaciones Scan), vamos a especificar los criterios de búsqueda utilizando una expresión de condición clave (una cadena que determina los elementos que vamos a leer en la tabla o el índice), especificamos el nombre y valor la clave de partición como una condición de igualdad, podemos realizar consultas utilizando diferentes operadores para encontrar los resultados con mejor precisión.
+
+También podemos limitar el número de elementos que esperamos en los resultados para agilizar las operaciones, pero no obtenemos información tan detallada de la capacidad de lectura que consumimos.
+
+El desafío de esta clase es responder en la sección de comentarios un caso de uso de DynamoDB y cuáles serian sus ventajas frente a los servicios RDS.
+
+
