@@ -96,3 +96,13 @@ Aplicaciones Web
 Gaming (gracias a su alta disponibilidad, conexión y por ser no relacional)
 Manejo de sesiones
 RealTime (ya que no solo nos permite almacenar nuestra información, también podemos utilizar toda la data en tiempo real para alimentar otros servicios y generar otras arquitecturas)
+
+
+PARTICIONES DYNAMO
+
+    - En DynamoDB las tablas se almacenan en particiones 📦
+    - La base de datos asigna las particiones de cada tabla y puede aumentar su tamaño para mejorar el desempeño o añadir más particiones cuando la partición esta llena 🛳
+    - Las particiones pueden aumentar su tamaño hasta 10GB siempre y cuando no superemos los 3.000 niveles de lectura y 1.000 de escritura 🐘
+    - Para almacenar elementos utilizamos claves principales simples o compuestas, DynamoDB utiliza estas claves para asignar las particiones 🤔
+    - Entre más aleatorias sean las claves principales, mejor performance tiene la base de datos 🎉
+    - Cuando utilizamos claves compuestas, el orden de los elementos depende de la clave de ordenación 💡
