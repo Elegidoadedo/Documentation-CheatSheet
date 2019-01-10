@@ -141,3 +141,22 @@ Estos streams capturan una secuencia en orden cronológico de las modificaciones
 DAX (DynamoDB Accelerator) es un cluster de caché completamente administrado por AWS y de alta disponibilidad para DynamoDB con un rendimiento de hasta 10 veces superior (de milisegundos a microsegundos) y soporta millones de solicitudes por segundo.
 
 Entre sus características encontramos la encriptación en reposo, podemos utilizar hasta 10 nodos y se puede seleccionar la zona de disponibilidad donde se desplegará el cluster. Podemos utilizar instancias small y medium para cargas de prueba, de resto todas son de tipo R (optimizadas en memoria).
+
+
+**CONCLUSIONES:**
+
+- Conclusiones del servicio RDS:
+
+Siempre que desplegamos bases de datos en producción es muy recomendado utilizar los despliegues en diferentes zonas con el servicio Multi AZ.
+Tenemos diferentes estrategias para optimizar el performance de nuestra base de datos, por ejemplo, implementar réplicas de lectura, utilizar bases de datos en memoria y dividir la base de datos en otras más pequeñas.
+El periodo de retención de los backups de nuestra base de datos son máximo 35 días.
+Debemos tener en cuenta los tipos de migración (homogéneas y heterogéneas) cuando vamos a migrar nuestra base de datos.
+AhororaDB es la base de datos más robusta y potente para grandes cargas de trabajo de AWS, también es la única con servicio de serverless y autoescalamiento.
+
+- Conclusiones del servicio DynamoDB:
+
+Es recomendado evitar las operaciones Scan para no afectar la capacidad aprovisionada, en cambio, las operaciones Query funcionan mucho mejor para el rendimiento de la base de datos.
+La función de autoscaling se puede programar con lectura y escritura pero debemos tener en cuenta los costos.
+Es clave elegir una llave principal adecuada para no afectar el performance de nuestra base de datos, entre más aleatoria sea este valor, mejor será el rendimiento.
+Con DynamoDB Streams podemos crear arquitecturas en tiempo real para diferentes aplicaciones.
+Cuando tenemos una tabla muy grande, configurar el particionamiento y los límites del mismo son fundamentales.
