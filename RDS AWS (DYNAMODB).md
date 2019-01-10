@@ -85,3 +85,14 @@ La unidad fundamental de DynamoDB son las tablas, que están compuestas por item
 La consistencia eventual de lectura NO puede mostrar los resultados de una tarea de escritura reciente cuando consultamos una tabla recién actualizada, además, consume los 4kb de bloques por segundo en las unidades de lectura.
 
 Por otra parte, la consistencia fuerte de lectura funciona correctamente cuando consultamos una tabla y recibimos la respuesta más reciente, pero consume el doble que la consistencia eventual, así que será más costosa. Este tipo de consistencia es el adecuando para aplicaciones y casos de uso muy específicos donde la consulta y la escritura deben estar tan sincronizadas como sea posible.
+
+CASOS DE USO PARA DYNAMODB
+
+El servicio de DynamoDB es muy útil en los siguientes casos:
+
+Aplicaciones móviles
+Internet de las cosas (IoT, gracias al real time y su capacidad para ingesta de información)
+Aplicaciones Web
+Gaming (gracias a su alta disponibilidad, conexión y por ser no relacional)
+Manejo de sesiones
+RealTime (ya que no solo nos permite almacenar nuestra información, también podemos utilizar toda la data en tiempo real para alimentar otros servicios y generar otras arquitecturas)
